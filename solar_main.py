@@ -1,3 +1,4 @@
+
 # coding: utf-8
 # license: GPLv3
 
@@ -6,6 +7,9 @@ from tkinter.filedialog import *
 from solar_vis import *
 from solar_model import *
 from solar_input import *
+from plot1 import *
+from plot2 import *
+from plot3 import *
 
 perform_execution = False
 """Флаг цикличности выполнения расчёта"""
@@ -156,6 +160,8 @@ def main():
     global start_button
 
     print('Modelling started!')
+    
+    
     physical_time = 0
 
     root = tkinter.Tk()
@@ -187,9 +193,14 @@ def main():
     displayed_time.set(str(physical_time) + " seconds gone")
     time_label = tkinter.Label(frame, textvariable=displayed_time, width=30)
     time_label.pack(side=tkinter.RIGHT)
-
+    
     root.mainloop()
+    picture1()
+    picture2()
+    picture3()
+
     print('Modelling finished!')
+    
 
 if __name__ == "__main__":
     main()
