@@ -97,7 +97,8 @@ def save_file_dialog():
     функцию считывания параметров системы небесных тел из данного файла.
     Считанные объекты сохраняются в глобальный список space_objects
     """
-    out_filename = asksaveasfilename(filetypes=(("Text file", ".txt"),))
+    out_filename = ('text.txt')
+    #out_filename = asksaveasfilename(filetypes=(("Text file", ".txt"),))
     write_space_objects_data_to_file(out_filename, space_objects)
     
     
@@ -110,10 +111,10 @@ def write_space_objects_data_to_file(output_filename, space_objects):
     **output_filename** — имя входного файла
     **space_objects** — список объектов планет и звёзд
     """
-    with open(output_filename, 'w') as out_file:
+    with open(output_filename, 'a') as out_file:
         for obj in space_objects:
             #print(out_file, obj.type, ' ' ,obj.R, ' ', obj.color, ' ', obj.m, ' ', obj.x, ' ', obj.y, ' ', obj.Vx, ' ', obj.Vy)
-            text_f = open('text.txt', 'a')
+            text_f = open(output_filename, 'a')
             text_f.write(str(physical_time))
             text_f.write(' ')
             text_f.write(obj.type)
