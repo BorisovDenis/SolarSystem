@@ -99,7 +99,49 @@ def save_file_dialog():
     """
     out_filename = asksaveasfilename(filetypes=(("Text file", ".txt"),))
     write_space_objects_data_to_file(out_filename, space_objects)
+    
+    
+def write_space_objects_data_to_file(output_filename, space_objects):
+    """Сохраняет данные о космических объектах в файл.
+    Строки должны иметь следующий формат:
+    <время> Star <радиус в пикселах> <цвет> <масса> <x> <y> <Vx> <Vy>
+    <время> Planet <радиус в пикселах> <цвет> <масса> <x> <y> <Vx> <Vy>
+    Параметры:
+    **output_filename** — имя входного файла
+    **space_objects** — список объектов планет и звёзд
+    """
+    with open(output_filename, 'w') as out_file:
+        for obj in space_objects:
+            #print(out_file, obj.type, ' ' ,obj.R, ' ', obj.color, ' ', obj.m, ' ', obj.x, ' ', obj.y, ' ', obj.Vx, ' ', obj.Vy)
+            text_f = open('text.txt', 'a')
+            text_f.write(str(physical_time))
+            text_f.write(' ')
+            text_f.write(obj.type)
+            text_f.write(' ')
+            text_f.write(obj.color)
+            text_f.write(' ')
+            text_f.write(str(obj.m))
+            text_f.write(' ')
+            text_f.write(str(obj.x))
+            text_f.write(' ')
+            text_f.write(str(obj.y))
+            text_f.write(' ')
+            text_f.write(str(obj.Vx))
+            text_f.write(' ')
+            text_f.write(str(obj.Vy))
+            text_f.write("\n")
+            text_f.close()
+        
 
+
+
+
+def save_statistics(space_objects):
+    '''
+    возможно, сохраняет данные в файл stats.txt
+    '''
+    pass
+    
 
 def main():
     """Главная функция главного модуля.
