@@ -28,6 +28,8 @@ for i in range(s):
     if i<(s*0.5):
         x[i] = x1[2*i+1]
         y[i] = y1[2*i+1]
+x = sorted(x)
+y = sorted(y)
 
 
 x_min = min(x)
