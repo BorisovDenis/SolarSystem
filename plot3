@@ -48,3 +48,4 @@ plt.plot(x, y, color = 'blue', linestyle = 'solid')
 
 plt.legend(loc = 'upper right')
 fig.savefig('task3.png')
+
