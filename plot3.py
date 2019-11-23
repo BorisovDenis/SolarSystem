@@ -43,8 +43,6 @@ plt.ylabel('V(r)')
 
 
 plt.plot(x, y, color = 'blue', linestyle = 'solid')
-#plt.plot(xs, cos_vals, color = 'red', linestyle = 'dashed',
-         #label = 'cos(x)')
 
 plt.legend(loc = 'upper right')
 fig.savefig('task3.png')
